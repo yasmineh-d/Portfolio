@@ -121,16 +121,17 @@
         </p>
         <div class="about-stats">
           <div>
-            <div class="stat-num">3+</div>
-            <div class="stat-label">Years Exp.</div>
+            <div class="stat-num">Tangier</div>
+            <div class="stat-label">Location</div>
           </div>
           <div>
-            <div class="stat-num">40+</div>
+            <div class="stat-num">3+</div>
             <div class="stat-label">Projects</div>
           </div>
           <div>
-            <div class="stat-num">20+</div>
-            <div class="stat-label">Clients</div>
+            <div class="stat-num">Available for Projects / Full-time
+            </div>
+            <div class="stat-label">Availability</div>
           </div>
         </div>
       </div>
@@ -253,7 +254,7 @@
     const ring = document.getElementById('cursor-ring');
     const fxCanvas = document.getElementById('cursor-fx');
     const fctx = fxCanvas.getContext('2d');
-    
+
     let fxw, fxh;
     function resizeFx() {
       fxw = fxCanvas.width = window.innerWidth;
@@ -262,10 +263,10 @@
     window.addEventListener('resize', resizeFx);
     resizeFx();
 
-    let mouse = { x: fxw/2, y: fxh/2, vx: 0, vy: 0 };
-    let pos = { x: fxw/2, y: fxh/2, rx: fxw/2, ry: fxh/2 };
-    let lastMouse = { x: fxw/2, y: fxh/2 };
-    
+    let mouse = { x: fxw / 2, y: fxh / 2, vx: 0, vy: 0 };
+    let pos = { x: fxw / 2, y: fxh / 2, rx: fxw / 2, ry: fxh / 2 };
+    let lastMouse = { x: fxw / 2, y: fxh / 2 };
+
     let isHovering = false;
     let hoverTarget = null;
     let currentSide = 'ice';
@@ -289,7 +290,7 @@
         vy: Math.sin(angle) * speed + mouse.vy * 0.1,
         life: 1,
         maxLife: Math.random() * 0.6 + 0.4,
-        type, 
+        type,
         size: Math.random() * 5 + 2,
         rot: Math.random() * Math.PI * 2,
         rotSpd: (Math.random() - 0.5) * 0.2
@@ -297,7 +298,7 @@
     }
 
     function triggerExplosion(x, y, type, count) {
-      for(let i=0; i<count; i++) spawnFx(x, y, type, 3.5);
+      for (let i = 0; i < count; i++) spawnFx(x, y, type, 3.5);
     }
 
     document.querySelectorAll('a, button, .side-nav-item, .project-card, .skill-tag').forEach(el => {
@@ -318,7 +319,7 @@
     function renderCursor() {
       let targetX = mouse.x;
       let targetY = mouse.y;
-      
+
       // Magnetic Attraction
       if (isHovering && hoverTarget) {
         const rect = hoverTarget.getBoundingClientRect();
@@ -351,7 +352,7 @@
       ring.style.borderColor = isHovering ? 'transparent' : color;
 
       // Trailing
-      const velocity = Math.sqrt(mouse.vx**2 + mouse.vy**2);
+      const velocity = Math.sqrt(mouse.vx ** 2 + mouse.vy ** 2);
       if (velocity > 3 && Math.random() < 0.7) {
         spawnFx(pos.x, pos.y, currentSide, velocity * 0.05);
       }
@@ -378,18 +379,18 @@
           fctx.shadowBlur = 12;
           fctx.beginPath();
           fctx.moveTo(0, -p.size);
-          fctx.lineTo(p.size*0.7, 0);
+          fctx.lineTo(p.size * 0.7, 0);
           fctx.lineTo(0, p.size);
-          fctx.lineTo(-p.size*0.7, 0);
+          fctx.lineTo(-p.size * 0.7, 0);
           fctx.fill();
-          p.vx *= 0.94; p.vy *= 0.94; 
+          p.vx *= 0.94; p.vy *= 0.94;
         } else if (p.type === 'fire') {
           fctx.fillStyle = '#ff6b00';
           fctx.shadowColor = '#ff6b00';
           fctx.shadowBlur = 15;
           p.vy -= 0.04;
           fctx.beginPath();
-          fctx.arc(0, 0, p.size * p.life, 0, Math.PI*2);
+          fctx.arc(0, 0, p.size * p.life, 0, Math.PI * 2);
           fctx.fill();
         } else if (p.type === 'steam') {
           fctx.fillStyle = '#e2f1f5';
@@ -399,12 +400,12 @@
           p.size *= 1.04;
           fctx.globalAlpha = p.life * 0.4;
           fctx.beginPath();
-          fctx.arc(0, 0, p.size, 0, Math.PI*2);
+          fctx.arc(0, 0, p.size, 0, Math.PI * 2);
           fctx.fill();
         }
         fctx.restore();
       }
-      
+
       mouse.vx *= 0.7; mouse.vy *= 0.7;
       requestAnimationFrame(renderCursor);
     }
