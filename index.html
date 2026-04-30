@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YASMINE.HADDAD — Full Stack Developer</title>
+  <!-- Polices -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <!-- Lien vers le fichier CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Advanced Cursor FX -->
+  <canvas id="cursor-fx"></canvas>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Side Navigation -->
+  <div class="side-nav">
+    <a href="#hero" class="side-nav-item active" title="Home">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </a>
+    <a href="#about" class="side-nav-item" title="Portfolio">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </svg>
+    </a>
+    <a href="#projects" class="side-nav-item" title="Code">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"></polyline>
+        <polyline points="8 6 2 12 8 18"></polyline>
+      </svg>
+    </a>
+    <a href="#" class="side-nav-item" title="Design">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+        <path d="M2 2l7.586 7.586"></path>
+        <circle cx="11" cy="11" r="2"></circle>
+      </svg>
+    </a>
+    <a href="#contact" class="side-nav-item" title="Contact">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+      </svg>
+    </a>
+    <div class="side-nav-spacer"></div>
+    <a href="#" class="side-nav-item" title="Settings">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path
+          d="M19.4 15a1.65 1.65 0 0 0 .33 1.83l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.83-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.83.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.83 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.83l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.83.33 1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.83-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.83 1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+        </path>
+      </svg>
+    </a>
+  </div>
+
+  <!-- NAV -->
+
+  <nav>
+    <div class="nav-branding">
+      <a class="nav-logo" href="#">YASMINE HADDAD</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div id="bg-img"></div>
+    <div id="overlay"></div>
+    <canvas id="particles"></canvas>
+
+    <!-- Large background name -->
+    <div class="hero-bg-text">
+      <span class="text-fire">YAS</span>
+      <span class="text-ice">MINE</span>
+    </div>
+
+    <!-- Intro Badge -->
+    <div class="hero-intro-badge">
+      Hi, I'm a <span class="white-text">Full Stack</span> <span class="fire-text">Developer</span>
+    </div>
+
+    <!-- Hero Portrait and Effects -->
+    <div class="hero-portrait-container">
+      <img src="images/image.png" alt="Yasmine Haddad" class="hero-portrait">
+      <div class="effect effect-fire"></div>
+      <div class="effect effect-ice"></div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="about-label">// 01 — About</p>
+        <h2 class="about-title">Full Stack<br /><span>Developer</span></h2>
+        <p class="about-text">
+          Passionné par la création d'expériences numériques immersives et performantes.
+          Je combine design et ingénierie pour construire des produits qui marquent les esprits.
+        </p>
+        <p class="about-text">
+          Du front au back, de la base de données au déploiement — je couvre tout le spectre
+          du développement web moderne avec précision et créativité.
+        </p>
+        <div class="about-stats">
+          <div>
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Years Exp.</div>
+          </div>
+          <div>
+            <div class="stat-num">40+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div>
+            <div class="stat-num">20+</div>
+            <div class="stat-label">Clients</div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-grid reveal" style="transition-delay:0.2s">
+        <div class="skill-tag"><span class="skill-dot"></span>React / Next.js</div>
+        <div class="skill-tag"><span class="skill-dot"></span>Node.js</div>
+        <div class="skill-tag"><span class="skill-dot"></span>TypeScript</div>
+        <div class="skill-tag"><span class="skill-dot"></span>PostgreSQL</div>
+        <div class="skill-tag"><span class="skill-dot"></span>MongoDB</div>
+        <div class="skill-tag"><span class="skill-dot"></span>Docker</div>
+        <div class="skill-tag"><span class="skill-dot"></span>AWS / Cloud</div>
+        <div class="skill-tag"><span class="skill-dot"></span>UI / UX Design</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <p class="section-label">// 02 — Selected Work</p>
+      <h2 class="section-title">Recent <span>Projects</span></h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-num">01</div>
+        <h3 class="project-title">E-Commerce Platform</h3>
+        <p class="project-desc">Solution complète de commerce électronique avec tableau de bord admin, paiements
+          intégrés et analytics en temps réel.</p>
+        <div class="project-tags">
+          <span class="project-tag">Next.js</span>
+          <span class="project-tag fire">Stripe</span>
+          <span class="project-tag">MongoDB</span>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:0.15s">
+        <div class="project-num">02</div>
+        <h3 class="project-title">SaaS Dashboard</h3>
+        <p class="project-desc">Interface analytique avancée avec visualisations interactives, rapports automatisés et
+          gestion multi-équipes.</p>
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag fire">TypeScript</span>
+          <span class="project-tag">D3.js</span>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:0.3s">
+        <div class="project-num">03</div>
+        <h3 class="project-title">Real-Time App</h3>
+        <p class="project-desc">Application de collaboration en temps réel avec messagerie instantanée, notifications
+          push et synchronisation cloud.</p>
+        <div class="project-tags">
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag fire">Socket.io</span>
+          <span class="project-tag">Redis</span>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:0.1s">
+        <div class="project-num">04</div>
+        <h3 class="project-title">Mobile API</h3>
+        <p class="project-desc">API RESTful haute performance avec authentification JWT, rate limiting et documentation
+          Swagger complète.</p>
+        <div class="project-tags">
+          <span class="project-tag">Express</span>
+          <span class="project-tag fire">PostgreSQL</span>
+          <span class="project-tag">Docker</span>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:0.25s">
+        <div class="project-num">05</div>
+        <h3 class="project-title">AI Integration</h3>
+        <p class="project-desc">Intégration d'IA générative pour automatiser des workflows complexes et enrichir
+          l'expérience utilisateur.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag fire">OpenAI API</span>
+          <span class="project-tag">FastAPI</span>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:0.4s">
+        <div class="project-num">06</div>
+        <h3 class="project-title">Portfolio CMS</h3>
+        <p class="project-desc">Système de gestion de contenu headless avec éditeur visuel, optimisation SEO et
+          déploiement automatisé.</p>
+        <div class="project-tags">
+          <span class="project-tag">Next.js</span>
+          <span class="project-tag fire">Sanity</span>
+          <span class="project-tag">Vercel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-glow"></div>
+    <div class="reveal">
+      <h2 class="contact-title">
+        <div class="line1">Let's Build</div>
+        <div>Something</div>
+      </h2>
+      <p class="contact-sub">Vous avez un projet en tête ? Discutons-en et créons quelque chose d'extraordinaire
+        ensemble.</p>
+      <div class="contact-links">
+        <a href="mailto:yasmine@haddad.dev" class="contact-link">Email</a>
+        <a href="#" class="contact-link">LinkedIn</a>
+        <a href="#" class="contact-link">GitHub</a>
+        <a href="#" class="contact-link">Twitter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>YASMINE.HADDAD</span>
+    <span>© 2026 — Full Stack Developer</span>
+  </footer>
+
+  <script>
+    // Advanced Cursor FX
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    const fxCanvas = document.getElementById('cursor-fx');
+    const fctx = fxCanvas.getContext('2d');
+    
+    let fxw, fxh;
+    function resizeFx() {
+      fxw = fxCanvas.width = window.innerWidth;
+      fxh = fxCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeFx);
+    resizeFx();
+
+    let mouse = { x: fxw/2, y: fxh/2, vx: 0, vy: 0 };
+    let pos = { x: fxw/2, y: fxh/2, rx: fxw/2, ry: fxh/2 };
+    let lastMouse = { x: fxw/2, y: fxh/2 };
+    
+    let isHovering = false;
+    let hoverTarget = null;
+    let currentSide = 'ice';
+
+    document.addEventListener('mousemove', e => {
+      lastMouse.x = mouse.x;
+      lastMouse.y = mouse.y;
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.vx = mouse.x - lastMouse.x;
+      mouse.vy = mouse.y - lastMouse.y;
+    });
+
+    const particlesFx = [];
+    function spawnFx(x, y, type, force = 1) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = (Math.random() * 2 + 1) * force;
+      particlesFx.push({
+        x, y,
+        vx: Math.cos(angle) * speed + mouse.vx * 0.1,
+        vy: Math.sin(angle) * speed + mouse.vy * 0.1,
+        life: 1,
+        maxLife: Math.random() * 0.6 + 0.4,
+        type, 
+        size: Math.random() * 5 + 2,
+        rot: Math.random() * Math.PI * 2,
+        rotSpd: (Math.random() - 0.5) * 0.2
+      });
+    }
+
+    function triggerExplosion(x, y, type, count) {
+      for(let i=0; i<count; i++) spawnFx(x, y, type, 3.5);
+    }
+
+    document.querySelectorAll('a, button, .side-nav-item, .project-card, .skill-tag').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        isHovering = true;
+        hoverTarget = el;
+        document.body.classList.add('magnetic-hover');
+        triggerExplosion(pos.x, pos.y, currentSide, 15);
+      });
+      el.addEventListener('mouseleave', () => {
+        isHovering = false;
+        hoverTarget = null;
+        document.body.classList.remove('magnetic-hover');
+        triggerExplosion(pos.x, pos.y, currentSide, 8); // subtle reassembly burst
+      });
+    });
+
+    function renderCursor() {
+      let targetX = mouse.x;
+      let targetY = mouse.y;
+      
+      // Magnetic Attraction
+      if (isHovering && hoverTarget) {
+        const rect = hoverTarget.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        targetX = mouse.x + (cx - mouse.x) * 0.35;
+        targetY = mouse.y + (cy - mouse.y) * 0.35;
+      }
+
+      // Smooth Physics easing
+      pos.x += (targetX - pos.x) * 0.25;
+      pos.y += (targetY - pos.y) * 0.25;
+      pos.rx += (targetX - pos.rx) * 0.15;
+      pos.ry += (targetY - pos.ry) * 0.15;
+
+      const newSide = pos.x < fxw / 2 ? 'ice' : 'fire';
+      if (newSide !== currentSide) {
+        triggerExplosion(pos.x, pos.y, 'steam', 25);
+        currentSide = newSide;
+      }
+
+      cursor.style.left = pos.x + 'px';
+      cursor.style.top = pos.y + 'px';
+      ring.style.left = pos.rx + 'px';
+      ring.style.top = pos.ry + 'px';
+
+      const color = currentSide === 'ice' ? 'rgba(0, 200, 255, 0.9)' : 'rgba(255, 107, 0, 0.9)';
+      cursor.style.background = color;
+      cursor.style.boxShadow = `0 0 20px ${color}`;
+      ring.style.borderColor = isHovering ? 'transparent' : color;
+
+      // Trailing
+      const velocity = Math.sqrt(mouse.vx**2 + mouse.vy**2);
+      if (velocity > 3 && Math.random() < 0.7) {
+        spawnFx(pos.x, pos.y, currentSide, velocity * 0.05);
+      }
+
+      // Render Canvas Particles
+      fctx.clearRect(0, 0, fxw, fxh);
+      for (let i = particlesFx.length - 1; i >= 0; i--) {
+        let p = particlesFx[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rot += p.rotSpd;
+        p.life -= 0.02 / p.maxLife;
+
+        if (p.life <= 0) { particlesFx.splice(i, 1); continue; }
+
+        fctx.save();
+        fctx.translate(p.x, p.y);
+        fctx.rotate(p.rot);
+        fctx.globalAlpha = p.life;
+
+        if (p.type === 'ice') {
+          fctx.fillStyle = '#00c8ff';
+          fctx.shadowColor = '#00c8ff';
+          fctx.shadowBlur = 12;
+          fctx.beginPath();
+          fctx.moveTo(0, -p.size);
+          fctx.lineTo(p.size*0.7, 0);
+          fctx.lineTo(0, p.size);
+          fctx.lineTo(-p.size*0.7, 0);
+          fctx.fill();
+          p.vx *= 0.94; p.vy *= 0.94; 
+        } else if (p.type === 'fire') {
+          fctx.fillStyle = '#ff6b00';
+          fctx.shadowColor = '#ff6b00';
+          fctx.shadowBlur = 15;
+          p.vy -= 0.04;
+          fctx.beginPath();
+          fctx.arc(0, 0, p.size * p.life, 0, Math.PI*2);
+          fctx.fill();
+        } else if (p.type === 'steam') {
+          fctx.fillStyle = '#e2f1f5';
+          fctx.shadowColor = '#a8e1ff';
+          fctx.shadowBlur = 20;
+          p.vy -= 0.03;
+          p.size *= 1.04;
+          fctx.globalAlpha = p.life * 0.4;
+          fctx.beginPath();
+          fctx.arc(0, 0, p.size, 0, Math.PI*2);
+          fctx.fill();
+        }
+        fctx.restore();
+      }
+      
+      mouse.vx *= 0.7; mouse.vy *= 0.7;
+      requestAnimationFrame(renderCursor);
+    }
+    renderCursor();
+
+    // Particles
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+
+    const PARTICLES = [];
+    for (let i = 0; i < 70; i++) {
+      PARTICLES.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.8 + 0.3,
+        dx: (Math.random() - 0.5) * 0.4,
+        dy: -Math.random() * 0.5 - 0.1,
+        alpha: Math.random() * 0.5 + 0.1,
+        type: Math.random() > 0.5 ? 'fire' : 'ice'
+      });
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      PARTICLES.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.type === 'fire'
+          ? `rgba(255,107,0,${p.alpha})`
+          : `rgba(0,200,255,${p.alpha})`;
+        ctx.fill();
+        p.x += p.dx; p.y += p.dy;
+        if (p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
+        if (p.x < -10 || p.x > canvas.width + 10) p.x = Math.random() * canvas.width;
+      });
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const scrollObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    reveals.forEach(r => scrollObserver.observe(r));
+
+    // Side Nav Active State
+    const sideItems = document.querySelectorAll('.side-nav-item');
+    const sections = ['hero', 'about', 'projects', 'contact'];
+
+    window.addEventListener('scroll', () => {
+      let current = 'hero';
+      sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+          const top = section.offsetTop;
+          if (pageYOffset >= top - 200) current = id;
+        }
+      });
+
+      sideItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href').includes(current)) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
