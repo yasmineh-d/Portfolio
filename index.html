@@ -135,15 +135,26 @@
           </div>
         </div>
       </div>
-      <div class="skills-grid reveal" style="transition-delay:0.2s">
-        <div class="skill-tag"><span class="skill-dot"></span>React / Next.js</div>
-        <div class="skill-tag"><span class="skill-dot"></span>Node.js</div>
-        <div class="skill-tag"><span class="skill-dot"></span>TypeScript</div>
-        <div class="skill-tag"><span class="skill-dot"></span>PostgreSQL</div>
-        <div class="skill-tag"><span class="skill-dot"></span>MongoDB</div>
-        <div class="skill-tag"><span class="skill-dot"></span>Docker</div>
-        <div class="skill-tag"><span class="skill-dot"></span>AWS / Cloud</div>
-        <div class="skill-tag"><span class="skill-dot"></span>UI / UX Design</div>
+      <div class="skills-wrapper reveal" style="transition-delay:0.2s">
+        <h4 class="about-label" style="margin-bottom: 16px; color: var(--ice);">Stacks & Technologies</h4>
+        <div class="skills-grid">
+          <div class="skill-tag special-skill"><span class="skill-dot"></span>PHP</div>
+          <div class="skill-tag special-skill"><span class="skill-dot"></span>Laravel</div>
+          <div class="skill-tag"><span class="skill-dot"></span>JavaScript</div>
+          <div class="skill-tag"><span class="skill-dot"></span>Python</div>
+          <div class="skill-tag"><span class="skill-dot"></span>HTML</div>
+          <div class="skill-tag"><span class="skill-dot"></span>Bootstrap</div>
+          <div class="skill-tag"><span class="skill-dot"></span>Tailwind</div>
+          <div class="skill-tag"><span class="skill-dot"></span>WordPress</div>
+        </div>
+
+        <h4 class="about-label" style="margin-top: 36px; margin-bottom: 16px; color: var(--ice);">Outils & Bases de Données</h4>
+        <div class="skills-grid">
+          <div class="skill-tag"><span class="skill-dot"></span>MySQL</div>
+          <div class="skill-tag"><span class="skill-dot"></span>MongoDB</div>
+          <div class="skill-tag"><span class="skill-dot"></span>Git / GitHub</div>
+          <div class="skill-tag"><span class="skill-dot"></span>Figma</div>
+        </div>
       </div>
     </div>
   </section>
@@ -301,7 +312,7 @@
       for (let i = 0; i < count; i++) spawnFx(x, y, type, 3.5);
     }
 
-    document.querySelectorAll('a, button, .side-nav-item, .project-card, .skill-tag').forEach(el => {
+    document.querySelectorAll('a, button, .side-nav-item, .project-card').forEach(el => {
       el.addEventListener('mouseenter', () => {
         isHovering = true;
         hoverTarget = el;
@@ -410,6 +421,26 @@
       requestAnimationFrame(renderCursor);
     }
     renderCursor();
+
+    // Text Hover Zoom Effect
+    const textTags = 'p, h1, h2, h3, h4, h5, h6, span, a, li, .hero-intro-badge, .skill-tag, .project-num, .stat-num, .stat-label';
+    document.querySelectorAll(textTags).forEach(el => {
+      // Ensure the element isn't part of a background element with pointer-events: none
+      if (window.getComputedStyle(el).pointerEvents === 'none') return;
+      
+      el.classList.add('zoom-text-element');
+      
+      el.addEventListener('mouseenter', (e) => {
+        e.stopPropagation();
+        document.body.classList.add('text-hover');
+        el.classList.add('text-zoomed');
+      });
+      
+      el.addEventListener('mouseleave', (e) => {
+        document.body.classList.remove('text-hover');
+        el.classList.remove('text-zoomed');
+      });
+    });
 
     // Particles
     const canvas = document.getElementById('particles');
