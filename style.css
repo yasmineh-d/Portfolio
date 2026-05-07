@@ -1052,68 +1052,101 @@ nav {
   position: relative;
   display: flex;
   align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.form-group:focus-within {
+  transform: translateX(5px);
 }
 
 .form-icon {
   position: absolute;
-  left: 16px;
-  color: rgba(255, 255, 255, 0.3);
+  left: 18px;
+  color: rgba(255, 255, 255, 0.2);
   pointer-events: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+}
+
+.form-group:focus-within .form-icon {
+  color: var(--ice);
+  transform: scale(1.1);
 }
 
 .form-group textarea ~ .form-icon {
-  top: 16px;
+  top: 18px;
 }
 
 .form-input {
   width: 100%;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  padding: 16px 16px 16px 48px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 18px 18px 18px 52px;
   color: var(--white);
   font-family: inherit;
   font-size: 0.95rem;
-  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fix browser autofill making inputs white */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover, 
+.form-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0px 1000px #0a0f1a inset;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: var(--white);
 }
 
 .form-input:focus {
   outline: none;
-  border-color: rgba(0, 200, 255, 0.5);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 0 15px rgba(0, 200, 255, 0.1);
+  border-color: var(--ice);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.15), inset 0 0 10px rgba(0, 200, 255, 0.05);
 }
 
 .form-input::placeholder {
   color: rgba(255, 255, 255, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+.form-input:focus::placeholder {
+  opacity: 0.4;
 }
 
 textarea.form-input {
   resize: vertical;
-  min-height: 120px;
+  min-height: 140px;
 }
 
 .send-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   background: linear-gradient(135deg, var(--ice), #a020f0);
   border: none;
-  border-radius: 8px;
-  padding: 16px 32px;
+  border-radius: 10px;
+  padding: 18px 40px;
   color: var(--white);
   font-family: 'Space Mono', monospace;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  align-self: flex-start;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(160, 32, 240, 0.2);
 }
 
 .send-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(160, 32, 240, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(160, 32, 240, 0.4);
+  filter: brightness(1.1);
+}
+
+.send-btn:active {
+  transform: translateY(-1px);
 }
 
 @media screen and (max-width: 768px) {

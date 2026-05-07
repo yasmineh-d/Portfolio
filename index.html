@@ -1,608 +1,898 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YASMINE.HADDAD — Full Stack Developer</title>
+    <!-- Polices -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YASMINE.HADDAD — Full Stack Developer</title>
-  <!-- Polices -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap"
-    rel="stylesheet" />
-  <!-- Lien vers le fichier CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <!-- Advanced Cursor FX -->
+    <canvas id="cursor-fx"></canvas>
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
 
-<body>
+    <!-- Side Navigation -->
+    <div class="side-nav">
+      <a href="#hero" class="side-nav-item active" title="Home">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+      </a>
+      <a href="#about" class="side-nav-item" title="About">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </a>
+      <a href="#education" class="side-nav-item" title="Education">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+        </svg>
+      </a>
+      <a href="#projects" class="side-nav-item" title="Code">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+      </a>
 
-  <!-- Advanced Cursor FX -->
-  <canvas id="cursor-fx"></canvas>
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
-
-  <!-- Side Navigation -->
-  <div class="side-nav">
-    <a href="#hero" class="side-nav-item active" title="Home">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-      </svg>
-    </a>
-    <a href="#about" class="side-nav-item" title="About">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-        <circle cx="12" cy="7" r="4"></circle>
-      </svg>
-    </a>
-    <a href="#education" class="side-nav-item" title="Education">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-        <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
-      </svg>
-    </a>
-    <a href="#projects" class="side-nav-item" title="Code">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="16 18 22 12 16 6"></polyline>
-        <polyline points="8 6 2 12 8 18"></polyline>
-      </svg>
-    </a>
-
-    <a href="#contact" class="side-nav-item" title="Contact">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-      </svg>
-    </a>
-
-  </div>
-
-  <!-- NAV -->
-
-  <nav>
-    <div class="nav-branding">
-      <a class="nav-logo" href="#">YASMINE HADDAD</a>
+      <a href="#contact" class="side-nav-item" title="Contact">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+      </a>
     </div>
-  </nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div id="bg-img"></div>
-    <div id="overlay"></div>
-    <canvas id="particles"></canvas>
+    <!-- NAV -->
 
-    <!-- Large background name -->
-    <div class="hero-bg-text">
-      <span class="text-fire">YAS</span>
-      <span class="text-ice">MINE</span>
-    </div>
+    <nav>
+      <div class="nav-branding">
+        <a class="nav-logo" href="#">YASMINE HADDAD</a>
+      </div>
+    </nav>
 
-    <!-- Intro Badge -->
-    <div class="hero-intro-badge">
-      Hi, I'm a <span class="white-text">Full Stack</span> <span class="fire-text">Developer</span>
-    </div>
+    <!-- HERO -->
+    <section id="hero">
+      <div id="bg-img"></div>
+      <div id="overlay"></div>
+      <canvas id="particles"></canvas>
 
-    <!-- Hero Portrait and Effects -->
-    <div class="hero-portrait-container">
-      <img src="images/image.png" alt="Yasmine Haddad" class="hero-portrait">
-      <div class="effect effect-fire"></div>
-      <div class="effect effect-ice"></div>
-    </div>
+      <!-- Large background name -->
+      <div class="hero-bg-text">
+        <span class="text-fire">YAS</span>
+        <span class="text-ice">MINE</span>
+      </div>
 
-  </section>
+      <!-- Intro Badge -->
+      <div class="hero-intro-badge">
+        Hi, I'm a <span class="white-text">Full Stack</span>
+        <span class="fire-text">Developer</span>
+      </div>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="about-grid">
+      <!-- Hero Portrait and Effects -->
+      <div class="hero-portrait-container">
+        <img
+          src="images/image.png"
+          alt="Yasmine Haddad"
+          class="hero-portrait"
+        />
+        <div class="effect effect-fire"></div>
+        <div class="effect effect-ice"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-grid">
+        <div class="reveal">
+          <p class="about-label">// 01 — About</p>
+          <h2 class="about-title">Full Stack<br /><span>Developer</span></h2>
+          <p class="about-text">
+            Web and mobile developer currently in bootcamp, passionate about
+            creating modern and intuitive applications.
+          </p>
+          <p class="about-text">
+            With a background in electronics and skills in Laravel, JavaScript,
+            and Python, I design high-performance solutions that combine design
+            and functionality.
+          </p>
+          <p class="about-text">
+            Curious and motivated, I am always ready to take on new challenges
+            and participate in innovative projects.
+          </p>
+          <div class="about-stats">
+            <div>
+              <div class="stat-num">Tangier</div>
+              <div class="stat-label">Location</div>
+            </div>
+            <div>
+              <div class="stat-num">3+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div>
+              <div
+                class="stat-num"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  font-size: 1.4rem;
+                "
+              >
+                Build, Connect & Grow Together
+                <span class="status-pulse"></span>
+              </div>
+              <div class="stat-label">Availability</div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-wrapper reveal" style="transition-delay: 0.2s">
+          <h4
+            class="about-label"
+            style="margin-bottom: 16px; color: var(--ice)"
+          >
+            Stacks & Technologies
+          </h4>
+          <div class="skills-grid">
+            <div class="skill-tag special-skill">
+              <span class="skill-dot"></span>PHP
+            </div>
+            <div class="skill-tag special-skill">
+              <span class="skill-dot"></span>Laravel
+            </div>
+            <div class="skill-tag">
+              <span class="skill-dot"></span>JavaScript
+            </div>
+            <div class="skill-tag"><span class="skill-dot"></span>Python</div>
+            <div class="skill-tag"><span class="skill-dot"></span>HTML</div>
+            <div class="skill-tag">
+              <span class="skill-dot"></span>Bootstrap
+            </div>
+            <div class="skill-tag"><span class="skill-dot"></span>Tailwind</div>
+            <div class="skill-tag">
+              <span class="skill-dot"></span>WordPress
+            </div>
+            <div class="skill-tag"><span class="skill-dot"></span>REST API</div>
+          </div>
+
+          <h4
+            class="about-label"
+            style="margin-top: 36px; margin-bottom: 16px; color: var(--ice)"
+          >
+            Tools & Databases
+          </h4>
+          <div class="skills-grid">
+            <div class="skill-tag"><span class="skill-dot"></span>MySQL</div>
+            <div class="skill-tag"><span class="skill-dot"></span>MongoDB</div>
+            <div class="skill-tag">
+              <span class="skill-dot"></span>Git - GitHub
+            </div>
+            <div class="skill-tag"><span class="skill-dot"></span>Figma</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education">
+      <div class="section-header reveal">
+        <p class="section-label">// 02 — Academic Path</p>
+        <h2 class="section-title">Academic <span>Background</span></h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-bg-text">EDUCATION</div>
+
+        <div class="timeline-item right fire reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="edu-date">2022 — 2024</span>
+            <h3 class="edu-title">Full Stack Web Development</h3>
+            <p class="edu-institution">Professional Training Institute</p>
+            <ul class="edu-desc-list">
+              <li>Comprehensive training in modern web architectures.</li>
+              <li>Focusing on both front-end and back-end ecosystems.</li>
+              <li>Database management and UI/UX design principles.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="timeline-item left ice reveal"
+          style="transition-delay: 0.15s"
+        >
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="edu-date">2019 — 2022</span>
+            <h3 class="edu-title">Bachelor of Computer Science</h3>
+            <p class="edu-institution">University of Technology</p>
+            <ul class="edu-desc-list">
+              <li>Solid foundation in computer science fundamentals.</li>
+              <li>Algorithms, software engineering, and systems analysis.</li>
+              <li>Development of practical programming projects.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="timeline-item right fire reveal"
+          style="transition-delay: 0.3s"
+        >
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="edu-date">2018 — 2019</span>
+            <h3 class="edu-title">Baccalaureate in Math Sciences</h3>
+            <p class="edu-institution">High School of Excellence</p>
+            <ul class="edu-desc-list">
+              <li>Advanced studies in mathematics and physics.</li>
+              <li>Developing strong analytical and problem-solving skills.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-header reveal">
+        <p class="section-label">// 03 — Selected Work</p>
+        <h2 class="section-title">Recent <span>Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-num">01</div>
+          <h3 class="project-title">E-Commerce Platform</h3>
+          <p class="project-desc">
+            Complete e-commerce solution with admin dashboard, integrated
+            payments, and real-time analytics.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Next.js</span>
+            <span class="project-tag fire">Stripe</span>
+            <span class="project-tag">MongoDB</span>
+          </div>
+        </div>
+        <div class="project-card reveal" style="transition-delay: 0.15s">
+          <div class="project-num">02</div>
+          <h3 class="project-title">SaaS Dashboard</h3>
+          <p class="project-desc">
+            Advanced analytics interface with interactive visualizations,
+            automated reports, and multi-team management.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag fire">TypeScript</span>
+            <span class="project-tag">D3.js</span>
+          </div>
+        </div>
+        <div class="project-card reveal" style="transition-delay: 0.3s">
+          <div class="project-num">03</div>
+          <h3 class="project-title">Real-Time App</h3>
+          <p class="project-desc">
+            Real-time collaboration application with instant messaging, push
+            notifications, and cloud synchronization.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag fire">Socket.io</span>
+            <span class="project-tag">Redis</span>
+          </div>
+        </div>
+        <div class="project-card reveal" style="transition-delay: 0.1s">
+          <div class="project-num">04</div>
+          <h3 class="project-title">Mobile API</h3>
+          <p class="project-desc">
+            High-performance RESTful API with JWT authentication, rate limiting,
+            and comprehensive Swagger documentation.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Express</span>
+            <span class="project-tag fire">PostgreSQL</span>
+            <span class="project-tag">Docker</span>
+          </div>
+        </div>
+        <div class="project-card reveal" style="transition-delay: 0.25s">
+          <div class="project-num">05</div>
+          <h3 class="project-title">AI Integration</h3>
+          <p class="project-desc">
+            Integration of generative AI to automate complex workflows and
+            enrich the user experience.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag fire">OpenAI API</span>
+            <span class="project-tag">FastAPI</span>
+          </div>
+        </div>
+        <div class="project-card reveal" style="transition-delay: 0.4s">
+          <div class="project-num">06</div>
+          <h3 class="project-title">Portfolio CMS</h3>
+          <p class="project-desc">
+            Headless content management system with visual editor, SEO
+            optimization, and automated deployment.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Next.js</span>
+            <span class="project-tag fire">Sanity</span>
+            <span class="project-tag">Vercel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contact-glow"></div>
       <div class="reveal">
-        <p class="about-label">// 01 — About</p>
-        <h2 class="about-title">Full Stack<br /><span>Developer</span></h2>
-        <p class="about-text">
-          Web and mobile developer currently in bootcamp, passionate about creating modern and intuitive applications.
+        <h2 class="contact-title">
+          GET IN <span class="text-gradient">TOUCH</span>
+        </h2>
+        <p class="contact-sub">
+          Available for new projects and collaborations. Let's discuss your next
+          big idea.
         </p>
-        <p class="about-text">
-          With a background in electronics and skills in Laravel, JavaScript, and Python, I design high-performance solutions that combine design and functionality.
-        </p>
-        <p class="about-text">
-          Curious and motivated, I am always ready to take on new challenges and participate in innovative projects.
-        </p>
-        <div class="about-stats">
-          <div>
-            <div class="stat-num">Tangier</div>
-            <div class="stat-label">Location</div>
-          </div>
-          <div>
-            <div class="stat-num">3+</div>
-            <div class="stat-label">Projects</div>
-          </div>
-          <div>
-            <div class="stat-num" style="display: flex; align-items: center; gap: 12px; font-size: 1.4rem;">
-              Build, Connect & Grow Together
-              <span class="status-pulse"></span>
-            </div>
-            <div class="stat-label">Availability</div>
-          </div>
-        </div>
-      </div>
-      <div class="skills-wrapper reveal" style="transition-delay:0.2s">
-        <h4 class="about-label" style="margin-bottom: 16px; color: var(--ice);">Stacks & Technologies</h4>
-        <div class="skills-grid">
-          <div class="skill-tag special-skill"><span class="skill-dot"></span>PHP</div>
-          <div class="skill-tag special-skill"><span class="skill-dot"></span>Laravel</div>
-          <div class="skill-tag"><span class="skill-dot"></span>JavaScript</div>
-          <div class="skill-tag"><span class="skill-dot"></span>Python</div>
-          <div class="skill-tag"><span class="skill-dot"></span>HTML</div>
-          <div class="skill-tag"><span class="skill-dot"></span>Bootstrap</div>
-          <div class="skill-tag"><span class="skill-dot"></span>Tailwind</div>
-          <div class="skill-tag"><span class="skill-dot"></span>WordPress</div>
-          <div class="skill-tag"><span class="skill-dot"></span>REST API</div>
-        </div>
+        <div class="contact-container">
+          <!-- Left: Info -->
+          <div class="contact-info-col">
+            <a
+              href="mailto:yassminehadad75@gmail.com"
+              style="text-decoration: none; color: inherit; display: block"
+            >
+              <div class="contact-info-card">
+                <div class="ci-icon ice-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="ci-details">
+                  <span class="ci-label">EMAIL</span>
+                  <span class="ci-value">yassminehadad75@gmail.com</span>
+                </div>
+              </div>
+            </a>
 
-        <h4 class="about-label" style="margin-top: 36px; margin-bottom: 16px; color: var(--ice);">Tools & Databases</h4>
-        <div class="skills-grid">
-          <div class="skill-tag"><span class="skill-dot"></span>MySQL</div>
-          <div class="skill-tag"><span class="skill-dot"></span>MongoDB</div>
-          <div class="skill-tag"><span class="skill-dot"></span>Git - GitHub</div>
-          <div class="skill-tag"><span class="skill-dot"></span>Figma</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- EDUCATION SECTION -->
-  <section id="education">
-    <div class="section-header reveal">
-      <p class="section-label">// 02 — Academic Path</p>
-      <h2 class="section-title">Academic <span>Background</span></h2>
-    </div>
+            <a
+              href="https://github.com/yasmineh-d"
+              target="_blank"
+              style="text-decoration: none; color: inherit; display: block"
+            >
+              <div class="contact-info-card">
+                <div class="ci-icon ice-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="ci-details">
+                  <span class="ci-label">GITHUB</span>
+                  <span class="ci-value">github.com/yasmineh-d</span>
+                </div>
+              </div>
+            </a>
 
-    <div class="timeline">
-      <div class="timeline-bg-text">EDUCATION</div>
-
-      <div class="timeline-item right fire reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="edu-date">2022 — 2024</span>
-          <h3 class="edu-title">Full Stack Web Development</h3>
-          <p class="edu-institution">Professional Training Institute</p>
-          <ul class="edu-desc-list">
-            <li>Comprehensive training in modern web architectures.</li>
-            <li>Focusing on both front-end and back-end ecosystems.</li>
-            <li>Database management and UI/UX design principles.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item left ice reveal" style="transition-delay: 0.15s;">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="edu-date">2019 — 2022</span>
-          <h3 class="edu-title">Bachelor of Computer Science</h3>
-          <p class="edu-institution">University of Technology</p>
-          <ul class="edu-desc-list">
-            <li>Solid foundation in computer science fundamentals.</li>
-            <li>Algorithms, software engineering, and systems analysis.</li>
-            <li>Development of practical programming projects.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item right fire reveal" style="transition-delay: 0.3s;">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="edu-date">2018 — 2019</span>
-          <h3 class="edu-title">Baccalaureate in Math Sciences</h3>
-          <p class="edu-institution">High School of Excellence</p>
-          <ul class="edu-desc-list">
-            <li>Advanced studies in mathematics and physics.</li>
-            <li>Developing strong analytical and problem-solving skills.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-header reveal">
-      <p class="section-label">// 03 — Selected Work</p>
-      <h2 class="section-title">Recent <span>Projects</span></h2>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card reveal">
-        <div class="project-num">01</div>
-        <h3 class="project-title">E-Commerce Platform</h3>
-        <p class="project-desc">Complete e-commerce solution with admin dashboard, integrated payments, and real-time analytics.</p>
-        <div class="project-tags">
-          <span class="project-tag">Next.js</span>
-          <span class="project-tag fire">Stripe</span>
-          <span class="project-tag">MongoDB</span>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:0.15s">
-        <div class="project-num">02</div>
-        <h3 class="project-title">SaaS Dashboard</h3>
-        <p class="project-desc">Advanced analytics interface with interactive visualizations, automated reports, and multi-team management.</p>
-        <div class="project-tags">
-          <span class="project-tag">React</span>
-          <span class="project-tag fire">TypeScript</span>
-          <span class="project-tag">D3.js</span>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:0.3s">
-        <div class="project-num">03</div>
-        <h3 class="project-title">Real-Time App</h3>
-        <p class="project-desc">Real-time collaboration application with instant messaging, push notifications, and cloud synchronization.</p>
-        <div class="project-tags">
-          <span class="project-tag">Node.js</span>
-          <span class="project-tag fire">Socket.io</span>
-          <span class="project-tag">Redis</span>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:0.1s">
-        <div class="project-num">04</div>
-        <h3 class="project-title">Mobile API</h3>
-        <p class="project-desc">High-performance RESTful API with JWT authentication, rate limiting, and comprehensive Swagger documentation.</p>
-        <div class="project-tags">
-          <span class="project-tag">Express</span>
-          <span class="project-tag fire">PostgreSQL</span>
-          <span class="project-tag">Docker</span>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:0.25s">
-        <div class="project-num">05</div>
-        <h3 class="project-title">AI Integration</h3>
-        <p class="project-desc">Integration of generative AI to automate complex workflows and enrich the user experience.</p>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag fire">OpenAI API</span>
-          <span class="project-tag">FastAPI</span>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:0.4s">
-        <div class="project-num">06</div>
-        <h3 class="project-title">Portfolio CMS</h3>
-        <p class="project-desc">Headless content management system with visual editor, SEO optimization, and automated deployment.</p>
-        <div class="project-tags">
-          <span class="project-tag">Next.js</span>
-          <span class="project-tag fire">Sanity</span>
-          <span class="project-tag">Vercel</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="contact-glow"></div>
-    <div class="reveal">
-      <h2 class="contact-title">
-        GET IN <span class="text-gradient">TOUCH</span>
-      </h2>
-      <p class="contact-sub">Available for new projects and collaborations. Let's discuss your next big idea.</p>
-      <div class="contact-container">
-        <!-- Left: Info -->
-        <div class="contact-info-col">
-          <a href="mailto:yassminehadad75@gmail.com" style="text-decoration: none; color: inherit; display: block;">
             <div class="contact-info-card">
               <div class="ci-icon ice-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
               </div>
               <div class="ci-details">
-                <span class="ci-label">EMAIL</span>
-                <span class="ci-value">yassminehadad75@gmail.com</span>
+                <span class="ci-label">LOCATION</span>
+                <span class="ci-value"
+                  >Tangier <span class="ci-country">MA</span></span
+                >
               </div>
             </div>
-          </a>
+          </div>
 
-          <a href="https://github.com/yasmineh-d" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-            <div class="contact-info-card">
-              <div class="ci-icon ice-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              </div>
-              <div class="ci-details">
-                <span class="ci-label">GITHUB</span>
-                <span class="ci-value">github.com/yasmineh-d</span>
-              </div>
-            </div>
-          </a>
-          
-          <div class="contact-info-card">
-            <div class="ci-icon ice-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </div>
-            <div class="ci-details">
-              <span class="ci-label">LOCATION</span>
-              <span class="ci-value">Tangier <span class="ci-country">MA</span></span>
-            </div>
-          </div>
-        </div>
+          <!-- Right: Form -->
+          <form id="contact-form" class="contact-form-col">
+            <div class="form-group">
+              <svg
+                class="form-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
 
-        <!-- Right: Form -->
-        <div class="contact-form-col">
-          <div class="form-group">
-            <svg class="form-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            <input type="text" class="form-input" placeholder="Your Name" />
-          </div>
-          <div class="form-group">
-            <span class="form-icon font-mono" style="font-family: 'Space Mono', monospace; font-size: 1.1rem;">@</span>
-            <input type="email" class="form-input" placeholder="Email Address" />
-          </div>
-          <div class="form-group">
-            <svg class="form-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-            <input type="text" class="form-input" placeholder="Subject" />
-          </div>
-          <div class="form-group">
-            <svg class="form-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-            <textarea class="form-input" placeholder="Message" rows="4"></textarea>
-          </div>
-          <button class="send-btn">
-            Send Message 
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-          </button>
+              <input
+                type="text"
+                name="name"
+                class="form-input"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <span
+                class="form-icon font-mono"
+                style="
+                  font-family: &quot;Space Mono&quot;, monospace;
+                  font-size: 1.1rem;
+                "
+                >@</span
+              >
+
+              <input
+                type="email"
+                name="email"
+                class="form-input"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <svg
+                class="form-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                ></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+
+              <input
+                type="text"
+                name="title"
+                class="form-input"
+                placeholder="Subject"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <svg
+                class="form-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                ></path>
+              </svg>
+
+              <textarea
+                name="message"
+                class="form-input"
+                placeholder="Message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="send-btn">
+              Send Message
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <span>YASMINE.HADDAD</span>
-    <span>© 2026 — Full Stack Developer</span>
-  </footer>
+    <footer>
+      <span>YASMINE.HADDAD</span>
+      <span>© 2026 — Full Stack Developer</span>
+    </footer>
 
-  <script>
-    // Advanced Cursor FX
-    const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursor-ring');
-    const fxCanvas = document.getElementById('cursor-fx');
-    const fctx = fxCanvas.getContext('2d');
+    <script>
+      emailjs.init("_Fmy7g2FtCsWUbWtq");
 
-    let fxw, fxh;
-    function resizeFx() {
-      fxw = fxCanvas.width = window.innerWidth;
-      fxh = fxCanvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeFx);
-    resizeFx();
+      const form = document.getElementById("contact-form");
 
-    let mouse = { x: fxw / 2, y: fxh / 2, vx: 0, vy: 0 };
-    let pos = { x: fxw / 2, y: fxh / 2, rx: fxw / 2, ry: fxh / 2 };
-    let lastMouse = { x: fxw / 2, y: fxh / 2 };
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    let isHovering = false;
-    let hoverTarget = null;
-    let currentSide = 'ice';
-
-    document.addEventListener('mousemove', e => {
-      lastMouse.x = mouse.x;
-      lastMouse.y = mouse.y;
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-      mouse.vx = mouse.x - lastMouse.x;
-      mouse.vy = mouse.y - lastMouse.y;
-    });
-
-    const particlesFx = [];
-    function spawnFx(x, y, type, force = 1) {
-      const angle = Math.random() * Math.PI * 2;
-      const speed = (Math.random() * 2 + 1) * force;
-      particlesFx.push({
-        x, y,
-        vx: Math.cos(angle) * speed + mouse.vx * 0.1,
-        vy: Math.sin(angle) * speed + mouse.vy * 0.1,
-        life: 1,
-        maxLife: Math.random() * 0.6 + 0.4,
-        type,
-        size: Math.random() * 5 + 2,
-        rot: Math.random() * Math.PI * 2,
-        rotSpd: (Math.random() - 0.5) * 0.2
+        emailjs
+          .sendForm("service_6a52kma", "template_s0gnokm", this)
+          .then(() => {
+            alert("Message sent successfully!");
+            form.reset();
+          })
+          .catch((error) => {
+            alert("Failed to send message");
+            console.log(error);
+          });
       });
-    }
 
-    function triggerExplosion(x, y, type, count) {
-      for (let i = 0; i < count; i++) spawnFx(x, y, type, 3.5);
-    }
+      // Advanced Cursor FX
+      const cursor = document.getElementById("cursor");
+      const ring = document.getElementById("cursor-ring");
+      const fxCanvas = document.getElementById("cursor-fx");
+      const fctx = fxCanvas.getContext("2d");
 
-    document.querySelectorAll('a, button, .side-nav-item, .project-card').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        isHovering = true;
-        hoverTarget = el;
-        document.body.classList.add('magnetic-hover');
-        triggerExplosion(pos.x, pos.y, currentSide, 15);
+      let fxw, fxh;
+      function resizeFx() {
+        fxw = fxCanvas.width = window.innerWidth;
+        fxh = fxCanvas.height = window.innerHeight;
+      }
+      window.addEventListener("resize", resizeFx);
+      resizeFx();
+
+      let mouse = { x: fxw / 2, y: fxh / 2, vx: 0, vy: 0 };
+      let pos = { x: fxw / 2, y: fxh / 2, rx: fxw / 2, ry: fxh / 2 };
+      let lastMouse = { x: fxw / 2, y: fxh / 2 };
+
+      let isHovering = false;
+      let hoverTarget = null;
+      let currentSide = "ice";
+
+      document.addEventListener("mousemove", (e) => {
+        lastMouse.x = mouse.x;
+        lastMouse.y = mouse.y;
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouse.vx = mouse.x - lastMouse.x;
+        mouse.vy = mouse.y - lastMouse.y;
       });
-      el.addEventListener('mouseleave', () => {
-        isHovering = false;
-        hoverTarget = null;
-        document.body.classList.remove('magnetic-hover');
-        triggerExplosion(pos.x, pos.y, currentSide, 8); // subtle reassembly burst
-      });
-    });
 
-    function renderCursor() {
-      let targetX = mouse.x;
-      let targetY = mouse.y;
-
-      // Magnetic Attraction
-      if (isHovering && hoverTarget) {
-        const rect = hoverTarget.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        targetX = mouse.x + (cx - mouse.x) * 0.35;
-        targetY = mouse.y + (cy - mouse.y) * 0.35;
+      const particlesFx = [];
+      function spawnFx(x, y, type, force = 1) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = (Math.random() * 2 + 1) * force;
+        particlesFx.push({
+          x,
+          y,
+          vx: Math.cos(angle) * speed + mouse.vx * 0.1,
+          vy: Math.sin(angle) * speed + mouse.vy * 0.1,
+          life: 1,
+          maxLife: Math.random() * 0.6 + 0.4,
+          type,
+          size: Math.random() * 5 + 2,
+          rot: Math.random() * Math.PI * 2,
+          rotSpd: (Math.random() - 0.5) * 0.2,
+        });
       }
 
-      // Smooth Physics easing
-      pos.x += (targetX - pos.x) * 0.25;
-      pos.y += (targetY - pos.y) * 0.25;
-      pos.rx += (targetX - pos.rx) * 0.15;
-      pos.ry += (targetY - pos.ry) * 0.15;
-
-      const newSide = pos.x < fxw / 2 ? 'ice' : 'fire';
-      if (newSide !== currentSide) {
-        triggerExplosion(pos.x, pos.y, 'steam', 25);
-        currentSide = newSide;
+      function triggerExplosion(x, y, type, count) {
+        for (let i = 0; i < count; i++) spawnFx(x, y, type, 3.5);
       }
 
-      cursor.style.left = pos.x + 'px';
-      cursor.style.top = pos.y + 'px';
-      ring.style.left = pos.rx + 'px';
-      ring.style.top = pos.ry + 'px';
+      document
+        .querySelectorAll("a, button, .side-nav-item, .project-card")
+        .forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            isHovering = true;
+            hoverTarget = el;
+            document.body.classList.add("magnetic-hover");
+            triggerExplosion(pos.x, pos.y, currentSide, 15);
+          });
+          el.addEventListener("mouseleave", () => {
+            isHovering = false;
+            hoverTarget = null;
+            document.body.classList.remove("magnetic-hover");
+            triggerExplosion(pos.x, pos.y, currentSide, 8); // subtle reassembly burst
+          });
+        });
 
-      const color = currentSide === 'ice' ? 'rgba(0, 200, 255, 0.9)' : 'rgba(255, 107, 0, 0.9)';
-      cursor.style.background = color;
-      cursor.style.boxShadow = `0 0 20px ${color}`;
-      ring.style.borderColor = isHovering ? 'transparent' : color;
+      function renderCursor() {
+        let targetX = mouse.x;
+        let targetY = mouse.y;
 
-      // Trailing
-      const velocity = Math.sqrt(mouse.vx ** 2 + mouse.vy ** 2);
-      if (velocity > 3 && Math.random() < 0.7) {
-        spawnFx(pos.x, pos.y, currentSide, velocity * 0.05);
-      }
-
-      // Render Canvas Particles
-      fctx.clearRect(0, 0, fxw, fxh);
-      for (let i = particlesFx.length - 1; i >= 0; i--) {
-        let p = particlesFx[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        p.rot += p.rotSpd;
-        p.life -= 0.02 / p.maxLife;
-
-        if (p.life <= 0) { particlesFx.splice(i, 1); continue; }
-
-        fctx.save();
-        fctx.translate(p.x, p.y);
-        fctx.rotate(p.rot);
-        fctx.globalAlpha = p.life;
-
-        if (p.type === 'ice') {
-          fctx.fillStyle = '#00c8ff';
-          fctx.shadowColor = '#00c8ff';
-          fctx.shadowBlur = 12;
-          fctx.beginPath();
-          fctx.moveTo(0, -p.size);
-          fctx.lineTo(p.size * 0.7, 0);
-          fctx.lineTo(0, p.size);
-          fctx.lineTo(-p.size * 0.7, 0);
-          fctx.fill();
-          p.vx *= 0.94; p.vy *= 0.94;
-        } else if (p.type === 'fire') {
-          fctx.fillStyle = '#ff6b00';
-          fctx.shadowColor = '#ff6b00';
-          fctx.shadowBlur = 15;
-          p.vy -= 0.04;
-          fctx.beginPath();
-          fctx.arc(0, 0, p.size * p.life, 0, Math.PI * 2);
-          fctx.fill();
-        } else if (p.type === 'steam') {
-          fctx.fillStyle = '#e2f1f5';
-          fctx.shadowColor = '#a8e1ff';
-          fctx.shadowBlur = 20;
-          p.vy -= 0.03;
-          p.size *= 1.04;
-          fctx.globalAlpha = p.life * 0.4;
-          fctx.beginPath();
-          fctx.arc(0, 0, p.size, 0, Math.PI * 2);
-          fctx.fill();
+        // Magnetic Attraction
+        if (isHovering && hoverTarget) {
+          const rect = hoverTarget.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          targetX = mouse.x + (cx - mouse.x) * 0.35;
+          targetY = mouse.y + (cy - mouse.y) * 0.35;
         }
-        fctx.restore();
+
+        // Smooth Physics easing
+        pos.x += (targetX - pos.x) * 0.25;
+        pos.y += (targetY - pos.y) * 0.25;
+        pos.rx += (targetX - pos.rx) * 0.15;
+        pos.ry += (targetY - pos.ry) * 0.15;
+
+        const newSide = pos.x < fxw / 2 ? "ice" : "fire";
+        if (newSide !== currentSide) {
+          triggerExplosion(pos.x, pos.y, "steam", 25);
+          currentSide = newSide;
+        }
+
+        cursor.style.left = pos.x + "px";
+        cursor.style.top = pos.y + "px";
+        ring.style.left = pos.rx + "px";
+        ring.style.top = pos.ry + "px";
+
+        const color =
+          currentSide === "ice"
+            ? "rgba(0, 200, 255, 0.9)"
+            : "rgba(255, 107, 0, 0.9)";
+        cursor.style.background = color;
+        cursor.style.boxShadow = `0 0 20px ${color}`;
+        ring.style.borderColor = isHovering ? "transparent" : color;
+
+        // Trailing
+        const velocity = Math.sqrt(mouse.vx ** 2 + mouse.vy ** 2);
+        if (velocity > 3 && Math.random() < 0.7) {
+          spawnFx(pos.x, pos.y, currentSide, velocity * 0.05);
+        }
+
+        // Render Canvas Particles
+        fctx.clearRect(0, 0, fxw, fxh);
+        for (let i = particlesFx.length - 1; i >= 0; i--) {
+          let p = particlesFx[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rot += p.rotSpd;
+          p.life -= 0.02 / p.maxLife;
+
+          if (p.life <= 0) {
+            particlesFx.splice(i, 1);
+            continue;
+          }
+
+          fctx.save();
+          fctx.translate(p.x, p.y);
+          fctx.rotate(p.rot);
+          fctx.globalAlpha = p.life;
+
+          if (p.type === "ice") {
+            fctx.fillStyle = "#00c8ff";
+            fctx.shadowColor = "#00c8ff";
+            fctx.shadowBlur = 12;
+            fctx.beginPath();
+            fctx.moveTo(0, -p.size);
+            fctx.lineTo(p.size * 0.7, 0);
+            fctx.lineTo(0, p.size);
+            fctx.lineTo(-p.size * 0.7, 0);
+            fctx.fill();
+            p.vx *= 0.94;
+            p.vy *= 0.94;
+          } else if (p.type === "fire") {
+            fctx.fillStyle = "#ff6b00";
+            fctx.shadowColor = "#ff6b00";
+            fctx.shadowBlur = 15;
+            p.vy -= 0.04;
+            fctx.beginPath();
+            fctx.arc(0, 0, p.size * p.life, 0, Math.PI * 2);
+            fctx.fill();
+          } else if (p.type === "steam") {
+            fctx.fillStyle = "#e2f1f5";
+            fctx.shadowColor = "#a8e1ff";
+            fctx.shadowBlur = 20;
+            p.vy -= 0.03;
+            p.size *= 1.04;
+            fctx.globalAlpha = p.life * 0.4;
+            fctx.beginPath();
+            fctx.arc(0, 0, p.size, 0, Math.PI * 2);
+            fctx.fill();
+          }
+          fctx.restore();
+        }
+
+        mouse.vx *= 0.7;
+        mouse.vy *= 0.7;
+        requestAnimationFrame(renderCursor);
+      }
+      renderCursor();
+
+      // Text Hover Zoom Effect
+      const textTags =
+        "p, h1, h2, h3, h4, h5, h6, span, a, li, .hero-intro-badge, .skill-tag, .project-num, .stat-num, .stat-label, .edu-date, .edu-title, .edu-institution, .edu-desc";
+      document.querySelectorAll(textTags).forEach((el) => {
+        // Ensure the element isn't part of a background element with pointer-events: none
+        if (window.getComputedStyle(el).pointerEvents === "none") return;
+
+        el.classList.add("zoom-text-element");
+
+        el.addEventListener("mouseenter", (e) => {
+          e.stopPropagation();
+          document.body.classList.add("text-hover");
+          el.classList.add("text-zoomed");
+        });
+
+        el.addEventListener("mouseleave", (e) => {
+          document.body.classList.remove("text-hover");
+          el.classList.remove("text-zoomed");
+        });
+      });
+
+      // Particles
+      const canvas = document.getElementById("particles");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+
+      const PARTICLES = [];
+      for (let i = 0; i < 70; i++) {
+        PARTICLES.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.8 + 0.3,
+          dx: (Math.random() - 0.5) * 0.4,
+          dy: -Math.random() * 0.5 - 0.1,
+          alpha: Math.random() * 0.5 + 0.1,
+          type: Math.random() > 0.5 ? "fire" : "ice",
+        });
       }
 
-      mouse.vx *= 0.7; mouse.vy *= 0.7;
-      requestAnimationFrame(renderCursor);
-    }
-    renderCursor();
+      function drawParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        PARTICLES.forEach((p) => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle =
+            p.type === "fire"
+              ? `rgba(255,107,0,${p.alpha})`
+              : `rgba(0,200,255,${p.alpha})`;
+          ctx.fill();
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.y < -10) {
+            p.y = canvas.height + 10;
+            p.x = Math.random() * canvas.width;
+          }
+          if (p.x < -10 || p.x > canvas.width + 10)
+            p.x = Math.random() * canvas.width;
+        });
+        requestAnimationFrame(drawParticles);
+      }
+      drawParticles();
 
-    // Text Hover Zoom Effect
-    const textTags = 'p, h1, h2, h3, h4, h5, h6, span, a, li, .hero-intro-badge, .skill-tag, .project-num, .stat-num, .stat-label, .edu-date, .edu-title, .edu-institution, .edu-desc';
-    document.querySelectorAll(textTags).forEach(el => {
-      // Ensure the element isn't part of a background element with pointer-events: none
-      if (window.getComputedStyle(el).pointerEvents === 'none') return;
-      
-      el.classList.add('zoom-text-element');
-      
-      el.addEventListener('mouseenter', (e) => {
-        e.stopPropagation();
-        document.body.classList.add('text-hover');
-        el.classList.add('text-zoomed');
+      // Scroll reveal
+      const reveals = document.querySelectorAll(".reveal");
+      const scrollObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.15 },
+      );
+      reveals.forEach((r) => scrollObserver.observe(r));
+
+      // Side Nav Active State
+      const sideItems = document.querySelectorAll(".side-nav-item");
+      const sections = ["hero", "about", "education", "projects", "contact"];
+
+      window.addEventListener("scroll", () => {
+        let current = "hero";
+        sections.forEach((id) => {
+          const section = document.getElementById(id);
+          if (section) {
+            const top = section.offsetTop;
+            if (pageYOffset >= top - 200) current = id;
+          }
+        });
+
+        sideItems.forEach((item) => {
+          item.classList.remove("active");
+          if (item.getAttribute("href").includes(current)) {
+            item.classList.add("active");
+          }
+        });
       });
-      
-      el.addEventListener('mouseleave', (e) => {
-        document.body.classList.remove('text-hover');
-        el.classList.remove('text-zoomed');
-      });
-    });
-
-    // Particles
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
-
-    const PARTICLES = [];
-    for (let i = 0; i < 70; i++) {
-      PARTICLES.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 1.8 + 0.3,
-        dx: (Math.random() - 0.5) * 0.4,
-        dy: -Math.random() * 0.5 - 0.1,
-        alpha: Math.random() * 0.5 + 0.1,
-        type: Math.random() > 0.5 ? 'fire' : 'ice'
-      });
-    }
-
-    function drawParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      PARTICLES.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = p.type === 'fire'
-          ? `rgba(255,107,0,${p.alpha})`
-          : `rgba(0,200,255,${p.alpha})`;
-        ctx.fill();
-        p.x += p.dx; p.y += p.dy;
-        if (p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
-        if (p.x < -10 || p.x > canvas.width + 10) p.x = Math.random() * canvas.width;
-      });
-      requestAnimationFrame(drawParticles);
-    }
-    drawParticles();
-
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const scrollObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.15 });
-    reveals.forEach(r => scrollObserver.observe(r));
-
-    // Side Nav Active State
-    const sideItems = document.querySelectorAll('.side-nav-item');
-    const sections = ['hero', 'about', 'education', 'projects', 'contact'];
-
-    window.addEventListener('scroll', () => {
-      let current = 'hero';
-      sections.forEach(id => {
-        const section = document.getElementById(id);
-        if (section) {
-          const top = section.offsetTop;
-          if (pageYOffset >= top - 200) current = id;
-        }
-      });
-
-      sideItems.forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href').includes(current)) {
-          item.classList.add('active');
-        }
-      });
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
