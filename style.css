@@ -504,7 +504,7 @@ nav {
 .stat-num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.8rem;
-  background: linear-gradient(135deg, var(--ice), #a020f0);
+  background: linear-gradient(135deg, var(--fire), var(--ice));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
