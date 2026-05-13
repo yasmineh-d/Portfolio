@@ -497,18 +497,28 @@ nav {
 
 .about-stats {
   display: flex;
-  gap: 40px;
-  margin-top: 36px;
+  gap: 52px;
+  margin-top: 42px;
+  align-items: flex-end;
+}
+
+.about-stats > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .stat-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   background: linear-gradient(135deg, var(--fire), var(--ice));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .status-pulse {
@@ -800,6 +810,66 @@ nav {
 
 .section-title span {
   color: var(--fire);
+}
+
+/* EXTRACURRICULAR ACTIVITIES */
+#extracurricular {
+  padding: 120px 10vw;
+  background: var(--dark);
+  position: relative;
+}
+
+.activities-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.activity-card {
+  display: flex;
+  gap: 20px;
+  padding: 28px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.activity-card:hover {
+  border-color: var(--ice);
+  background: rgba(0, 200, 255, 0.05);
+  transform: translateY(-4px);
+}
+
+.activity-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+  color: var(--ice);
+  letter-spacing: 1px;
+}
+
+.activity-org {
+  font-size: 0.9rem;
+  color: var(--fire);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.activity-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
 }
 
 .projects-grid {
@@ -1156,6 +1226,9 @@ textarea.form-input {
   .status-pill {
     margin-top: 10px;
   }
+  .activities-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* FOOTER */
@@ -1243,5 +1316,11 @@ button:focus-visible {
   .side-left,
   .side-right {
     display: none;
+  }
+  .about-stats {
+    gap: 24px;
+  }
+  .stat-num {
+    font-size: 1.3rem;
   }
 }
